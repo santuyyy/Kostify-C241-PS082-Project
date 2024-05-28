@@ -1,0 +1,19 @@
+[
+    {
+      "id": 1,
+      "name": "Kost A",
+      "location": "Jakarta",
+      "price": 2000000,
+      "facilities": ["WiFi", "AC"],
+      "images": ["image1.jpg", "image2.jpg"]
+    },
+    {
+      "id": 2,
+      "name": "Kost B",
+      "location": "Bandung",
+      "price": 1500000,
+      "facilities": ["WiFi"],
+      "images": ["image3.jpg", "image4.jpg"]
+    }
+  ]
+  
