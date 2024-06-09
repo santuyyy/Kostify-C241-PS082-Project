@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Kostify</string>
+
+    <!--  Splashscreen text  -->
+    <string name="splashscreendesc_row1">
+        Temukan kos impianmu</string>
+    <string name="splashscreendesc_row2">
+        bersama kami</string>
+
+
+    <!--    Onboard text -->
+    <string name="onboardpage1">Selamat Datang di Kostify</string>
+    <string name="onboardpage2">Temukan Kos yang terbaik bagimu</string>
+    <string name="onboardpage3">Kenali Informasi tentang Kos
+yang kamu cari</string>
+
+
+    <!--  card Kos  -->
+    <string name="tipekos">Campur</string>
+    <string name="nama_kos">Kos Kartika</string>
+    <string name="lokasi">Jakarta Barat</string>
+    <string name="alamat">Kos Kartika Jaya Residence II
+Queesize Bedroom Kelapa Belalai
+Jakarta Barat 158GA</string>
+    <string name="fasilitas">Wifi - Ac - Kloset Duduk - Kasur</string>
+    <string name="rating">4.8</string>
+    <string name="harga">Rp1.420.000/bulan</string>
+
+
+    <!-- Tablayout Placeholder title (favorite) -->
+    <string name="favorite_placeholder">Difavoritkan</string>
+    <string name="history_placeholder">Pernah Dilihat</string>
+
+</resources>

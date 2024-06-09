@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- default color -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Color Pallete -->
+    <color name="ScreenColor">#E6F6F5</color>
+    <color name="PrimaryColor">#00A99D</color>
+    <color name="SecondaryColor">#00554F</color>
+    <color name="OutlineColor">#B3E5E2</color>
+    <color name="FillColor">#E9D521</color>
+</resources>
