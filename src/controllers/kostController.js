@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const kostFilePath = path.join(__dirname, '../data/kost.json');
+const kostFilePath = path.join(__dirname, '../data/datakost.json');
 
 // Helper function to read kost data
 function readKostData(callback) {
@@ -21,9 +21,28 @@ exports.searchKost = (req, res) => {
             return res.status(500).json({ error: 'Failed to read kost data' });
         }
 
-        // Implementasi logika pencarian berdasarkan query parameters di sini
+        // Mengambil query parameters
+        const { lokasi_jabodetabek, harga, AC } = req.query;
 
-        res.json(filteredData);
+        // Filter data kost berdasarkan query parameters
+        let filteredKost = kostData;
+
+        if (lokasi_jabodetabek) {
+            filteredKost = filteredKost.filter(kost => kost.lokasi_jabodetabek.toLowerCase().includes(lokasi_jabodetabek.toLowerCase()));
+        }
+
+        if (harga) {
+            const maxHarga = parseFloat(harga);
+            filteredKost = filteredKost.filter(kost => kost.harga <= maxHarga);
+        }
+
+        if (AC) {
+            const acValue = parseInt(AC);
+            filteredKost = filteredKost.filter(kost => kost.AC === acValue);
+        }
+
+        // Mengirimkan data yang telah difilter sebagai respon
+        res.json(filteredKost);
     });
 };
 
