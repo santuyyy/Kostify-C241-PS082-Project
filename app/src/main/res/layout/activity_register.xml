@@ -78,7 +78,7 @@
                 android:textColor="@color/SecondaryColor" />
 
             <EditText
-                android:id="@+id/et_emailNamaLengkap"
+                android:id="@+id/edt_namaRegis"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
@@ -112,7 +112,7 @@
                 android:text="Nomor Handphone" />
 
             <EditText
-                android:id="@+id/et_phoneRegister"
+                android:id="@+id/edt_nomorRegis"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/bg_btn_inputform"
@@ -146,7 +146,7 @@
                 android:text="Email" />
 
             <EditText
-                android:id="@+id/et_emailRegister"
+                android:id="@+id/edt_emailRegis"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/bg_btn_inputform"
@@ -180,7 +180,7 @@
                 android:text="Kata Sandi" />
 
             <EditText
-                android:id="@+id/et_passRegister"
+                android:id="@+id/edt_kataRegis"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/bg_btn_inputform"
@@ -215,7 +215,7 @@
                 android:text="Konfirmasi Kata Sandi" />
 
             <EditText
-                android:id="@+id/et_conpassRegister"
+                android:id="@+id/edt_konfirmRegis"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/bg_btn_inputform"
@@ -234,7 +234,7 @@
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_daftar"
+            android:id="@+id/btn_daftarRegis"
             style="@style/GreenButtonForm"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -260,7 +260,7 @@
                 android:textSize="11sp" />
 
             <TextView
-                android:id="@+id/tv_linkLogin"
+                android:id="@+id/tv_masukRegis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

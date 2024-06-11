@@ -51,11 +51,11 @@
             android:name=".ui.loginRegisterPage.LupaPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.splashScreen.SplashScreen"
-            android:exported="false" />
-        <activity
             android:name=".ui.SearchKosActivity"
-            android:exported="true">
+            android:exported="true"/>
+        <activity
+            android:name=".ui.splashScreen.SplashScreen"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

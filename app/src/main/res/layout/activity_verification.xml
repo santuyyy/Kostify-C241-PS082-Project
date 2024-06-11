@@ -94,7 +94,7 @@
                 android:textSize="11sp" />
 
             <TextView
-                android:id="@+id/tv_linkKirimUlang"
+                android:id="@+id/tv_kirimVerif"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nunito_sans"
@@ -105,7 +105,7 @@
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_verifikasi"
+            android:id="@+id/btn_verifVerif"
             style="@style/GreenButtonForm"
             android:layout_width="match_parent"
             android:layout_height="50dp"

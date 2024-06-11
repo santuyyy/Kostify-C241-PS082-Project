@@ -33,14 +33,14 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/imageView13"
+                    android:id="@+id/iv_fotoProfile"
                     android:layout_width="174dp"
                     android:layout_height="192dp"
                     android:layout_marginBottom="14dp"
                     tools:src="@tools:sample/avatars" />
 
                 <TextView
-                    android:id="@+id/textView33"
+                    android:id="@+id/tv_namaProfile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/nunito_sans_bold"
@@ -73,15 +73,17 @@
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/button2"
+                android:id="@+id/btn_ubahprofil"
+                style="@style/ProfileMenuButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/ProfileMenuButtonStyle"
-                android:outlineAmbientShadowColor="@color/ScreenColor"
-                android:outlineSpotShadowColor="@color/ScreenColor"
+                android:drawablePadding="10dp"
                 android:drawableLeft="@drawable/ic_profile_outlinedv2"
                 android:drawableRight="@drawable/rightarrowdarkgreen"
-                android:text="Button" />
+                android:outlineAmbientShadowColor="@color/ScreenColor"
+                android:outlineSpotShadowColor="@color/ScreenColor"
+                android:text="Ubah Profil"
+                android:textAlignment="viewStart" />
         </LinearLayout>
 
         <LinearLayout
@@ -90,16 +92,18 @@
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/button3"
-                android:layout_marginTop="10dp"
+                android:id="@+id/btn_ubahsandi"
+                style="@style/ProfileMenuButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/ProfileMenuButtonStyle"
-                android:outlineAmbientShadowColor="@color/ScreenColor"
-                android:outlineSpotShadowColor="@color/ScreenColor"
+                android:layout_marginTop="10dp"
+                android:drawablePadding="10dp"
                 android:drawableLeft="@drawable/ic_lock_outlinedv2"
                 android:drawableRight="@drawable/rightarrowdarkgreen"
-                android:text="Button" />
+                android:outlineAmbientShadowColor="@color/ScreenColor"
+                android:outlineSpotShadowColor="@color/ScreenColor"
+                android:text="Ubah Kata Sandi"
+                android:textAlignment="viewStart" />
         </LinearLayout>
 
         <LinearLayout
@@ -108,16 +112,18 @@
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/button4"
-                android:layout_marginTop="10dp"
+                android:id="@+id/btn_keluar"
+                style="@style/ProfileMenuButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/ProfileMenuButtonStyle"
-                android:outlineAmbientShadowColor="@color/ScreenColor"
-                android:outlineSpotShadowColor="@color/ScreenColor"
+                android:layout_marginTop="10dp"
+                android:drawablePadding="10dp"
                 android:drawableLeft="@drawable/ic_logout_outlined"
                 android:drawableRight="@drawable/rightarrowdarkgreen"
-                android:text="Button" />
+                android:outlineAmbientShadowColor="@color/ScreenColor"
+                android:outlineSpotShadowColor="@color/ScreenColor"
+                android:text="Keluar"
+                android:textAlignment="viewStart" />
         </LinearLayout>
     </LinearLayout>
 

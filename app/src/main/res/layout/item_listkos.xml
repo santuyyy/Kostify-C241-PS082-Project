@@ -47,7 +47,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
-                        android:id="@+id/textView30"
+                        android:id="@+id/tv_tipeDetail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/bg_tipekos"
@@ -67,7 +67,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/textView27"
+                            android:id="@+id/tv_namaItem"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/nunito_sans_bold"
@@ -76,7 +76,7 @@
                             android:textSize="16sp" />
 
                         <TextView
-                            android:id="@+id/textView26"
+                            android:id="@+id/tv_lokasiItem"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/nunito_sans_semibold"
@@ -85,7 +85,7 @@
                             android:textSize="13sp" />
 
                         <TextView
-                            android:id="@+id/textView25"
+                            android:id="@+id/tv_fasItem"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/nunito_sans"
@@ -106,7 +106,7 @@
                                 app:srcCompat="@drawable/ic_rating_fill" />
 
                             <TextView
-                                android:id="@+id/textView23"
+                                android:id="@+id/tv_ratingItem"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/nunito_sans_bold"
@@ -117,7 +117,7 @@
                     </LinearLayout>
 
                     <TextView
-                        android:id="@+id/textView22"
+                        android:id="@+id/tv_hargaItem"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/nunito_sans_bold"
