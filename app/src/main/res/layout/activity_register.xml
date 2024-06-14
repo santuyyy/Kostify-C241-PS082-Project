@@ -8,29 +8,39 @@
     android:background="@color/ScreenColor"
     tools:context=".ui.loginRegisterPage.RegisterActivity">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/materialToolbar"
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/PrimaryColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:navigationIcon="@drawable/ic_backbtn_lightgreen"/>
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/materialToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/PrimaryColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:navigationIcon="@drawable/ic_backbtn_lightgreen"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </com.google.android.material.appbar.AppBarLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="40dp"
         android:layout_marginRight="20dp"
         android:orientation="vertical"
         app:flow_verticalGap="28dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialToolbar">
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -97,40 +107,6 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="28dp"
-            android:orientation="vertical"
-            tools:layout_editor_absoluteX="24dp"
-            tools:layout_editor_absoluteY="354dp">
-
-            <TextView
-                android:id="@+id/textView8"
-                style="@style/InputTitleFormStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="6dp"
-                android:text="Nomor Handphone" />
-
-            <EditText
-                android:id="@+id/edt_nomorRegis"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@drawable/bg_btn_inputform"
-                android:drawableLeft="@drawable/ic_phone_outlined"
-                android:drawablePadding="10dp"
-                android:ems="10"
-                android:fontFamily="@font/nunito_sans"
-                android:hint="Masukkan nomor hp aktif"
-                android:inputType="phone"
-                android:paddingHorizontal="12dp"
-                android:paddingVertical="10dp"
-                android:textColorHint="#5000554F"
-                android:textSize="16sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="28dp"
             android:orientation="vertical"
@@ -180,7 +156,7 @@
                 android:text="Kata Sandi" />
 
             <EditText
-                android:id="@+id/edt_kataRegis"
+                android:id="@+id/edt_katasandiRegis"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/bg_btn_inputform"
@@ -215,7 +191,7 @@
                 android:text="Konfirmasi Kata Sandi" />
 
             <EditText
-                android:id="@+id/edt_konfirmRegis"
+                android:id="@+id/edt_konfirmsandiRegis"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/bg_btn_inputform"

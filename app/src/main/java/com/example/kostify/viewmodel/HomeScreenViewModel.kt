@@ -1,4 +1,4 @@
 package com.example.kostify.viewmodel
 
-class HomeScreenActivity {
+class HomeScreenViewModel {
 }

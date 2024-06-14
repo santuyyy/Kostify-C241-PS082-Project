@@ -1,67 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/ScreenColor"
-    tools:context=".ui.SearchKosActivity">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="20dp"
-        android:orientation="vertical"
+        android:background="@color/ScreenColor"
+        tools:context=".ui.SearchKosActivity">
+
+        <com.google.android.material.search.SearchBar
+            android:id="@+id/searchBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:paddingHorizontal="5dp"
+            android:layout_marginTop="40dp"
+            style="@style/SearchBarStyle"
+            android:layout_marginEnd="20dp"
+            app:navigationIcon="@drawable/ic_search_outlined"
+            app:navigationIconTint="@color/SecondaryColor_50"
+            android:hint="Cari Rekomendasi kos disini"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_listKos"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/searchView"
+            app:layout_constraintStart_toStartOf="@+id/searchView"
+            app:layout_constraintTop_toBottomOf="@+id/searchBar" />
+
+        <com.google.android.material.search.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:hint="Cari Rekomendasi kos disini"
+            app:layout_anchor="@id/searchBar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+        </com.google.android.material.search.SearchView>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/searchView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="@+id/searchView" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_bottomnavbar"
+            app:itemActiveIndicatorStyle="@android:color/transparent"
+            app:itemIconTint="@color/item_selector"
+            app:itemRippleColor="@android:color/transparent"
+            app:itemTextAppearanceActive="@style/BottomNavStyle"
+            app:itemTextAppearanceInactive="@style/BottomNavStyle"
+            app:itemTextColor="@color/item_selector"
+            app:labelVisibilityMode="labeled"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:menu="@menu/bottom_navbar" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <LinearLayout
-                android:id="@+id/linearLayout4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
 
 
-                <ImageView
-                    android:id="@+id/imageView5"
-                    android:layout_width="18dp"
-                    android:layout_height="24dp"
-                    android:layout_gravity="center"
-                    android:layout_marginEnd="16dp"
-                    app:srcCompat="@drawable/ic_backbtn_darkgreen" />
-
-                <com.google.android.material.search.SearchBar
-                    android:id="@+id/searchBar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="1dp"
-                    android:layout_marginVertical="1dp"
-                    android:background="@drawable/bg_searchbar"
-                    android:hint="Cari Rekomendasi kos disini" />
-
-            </LinearLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginTop="17dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>

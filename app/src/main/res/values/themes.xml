@@ -3,7 +3,12 @@
     <style name="Base.Theme.Kostify" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <!-- Search bar hint color-->
+        <item name="colorOnSurfaceVariant">@color/SecondaryColor_50</item>
+       <!-- <item name="fontFamily">@font/nunito_sans</item>-->
     </style>
+    <style name="Theme.Kostify" parent="Base.Theme.Kostify" />
 
     <style name="ScreenBackground">
         <item name="android:background">@color/ScreenColor</item>
@@ -42,6 +47,13 @@
         <item name="android:textAllCaps">false</item>
         <item name="android:fontFamily">@font/nunito_sans_semibold</item>
     </style>
-    
-    <style name="Theme.Kostify" parent="Base.Theme.Kostify" />
+
+    <style name="SearchBarStyle" parent="Widget.Material3.SearchBar">
+        <item name="android:textColorHint">@color/OutlineColor</item>
+        <item name="android:backgroundTint">@color/OutlineColor</item>
+        <item name="fontFamily">@font/nunito_sans</item>
+    </style>
+
+
+   
 </resources>

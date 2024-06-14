@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "176060989098",
+    "project_id": "kostify-database",
+    "storage_bucket": "kostify-database.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:176060989098:android:947aaf375e3eb8b5c89ad3",
+        "android_client_info": {
+          "package_name": "com.example.kostify"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "176060989098-4r637sphgtbhb7km1ftbcpqkmsm4shhb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kostify",
+            "certificate_hash": "6d17261529e3953e5d5a3d2956c3489802671096"
+          }
+        },
+        {
+          "client_id": "176060989098-18cu81ohk0nkf45egflaanc51iu3ojd8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdw0usnTPUVvuKWHv8KaI680kuPAH1Fds"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "176060989098-18cu81ohk0nkf45egflaanc51iu3ojd8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

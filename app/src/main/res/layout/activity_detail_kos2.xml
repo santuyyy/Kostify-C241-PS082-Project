@@ -22,57 +22,74 @@
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/img_contohgambarkos" />
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="14dp"
-            android:layout_marginRight="20dp"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-                <ImageView
-                    android:id="@+id/imageView11"
-                    android:layout_width="18dp"
-                    android:layout_height="24dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_backbtn_darkgreen" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-                <ImageView
-                    android:id="@+id/imageView12"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_heart_redoutlined" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    <ImageView
+                        android:id="@+id/iv_backBtn"
+                        android:layout_width="18dp"
+                        android:layout_height="24dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_backbtn_darkgreen" />
 
-        </LinearLayout>
+                    <ImageView
+                        android:id="@+id/imageView12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_heart_redoutlined" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     </FrameLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout8"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="0dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout">
 
+
         <LinearLayout
+            android:id="@+id/linearLayout10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
 
             <LinearLayout
@@ -93,7 +110,7 @@
                         android:fontFamily="@font/nunito_sans_bold"
                         android:text="@string/nama_kos"
                         android:textColor="@color/PrimaryColor"
-                        android:textSize="23sp" />
+                        android:textSize="28sp" />
 
                     <TextView
                         android:id="@+id/tv_alamatDetail"
@@ -101,15 +118,6 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/nunito_sans"
                         android:text="@string/alamat"
-                        android:textColor="@color/SecondaryColor"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:id="@+id/tv_lokasiDetail"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/nunito_sans_bold"
-                        android:text="@string/lokasi"
                         android:textColor="@color/SecondaryColor"
                         android:textSize="16sp" />
 
@@ -142,7 +150,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/nunito_sans_bold"
-                    android:gravity="right"
+                    android:gravity="end"
                     android:text="@string/harga"
                     android:textColor="@color/SecondaryColor"
                     android:textSize="16sp" />
@@ -150,31 +158,74 @@
 
         </LinearLayout>
 
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginVertical="15dp"
+            android:background="?android:attr/listDivider"
+            app:dividerColor="@color/OutlineColor" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_sans_semibold"
+                android:text="Luas Kamar"
+                android:textColor="@color/PrimaryColor"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tv_luasKamarDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/luaskamar"
+                android:fontFamily="@font/nunito_sans"
+                android:textColor="@color/SecondaryColor"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView17"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/nunito_sans_bold"
+                android:fontFamily="@font/nunito_sans_semibold"
                 android:text="Deskripsi"
-                android:textColor="@color/SecondaryColor"
+                android:textColor="@color/PrimaryColor"
                 android:textSize="13sp" />
 
             <TextView
                 android:id="@+id/tv_deskDetail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:fontFamily="@font/nunito_sans"
+                android:text="@string/deskripsi"
                 android:textColor="@color/SecondaryColor"
                 android:textSize="11sp" />
 
         </LinearLayout>
-
     </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

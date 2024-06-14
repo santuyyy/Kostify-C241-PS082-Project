@@ -3,12 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp">
 
 
     <com.google.android.material.card.MaterialCardView
-        android:layout_width="wrap_content"
-        android:layout_height="180dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:backgroundTint="#50CCEEEB"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,9 +28,9 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/imageView10"
-                    android:layout_width="170dp"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/iv_gambarKos"
+                    android:layout_width="140dp"
+                    android:layout_height="120dp"
                     android:scaleType="centerCrop"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -37,95 +38,77 @@
                     app:srcCompat="@drawable/img_contohgambarkos" />
 
                 <LinearLayout
-                    android:layout_width="240dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:padding="10dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageView10"
+                    app:layout_constraintStart_toEndOf="@+id/iv_gambarKos"
                     app:layout_constraintTop_toTopOf="parent">
 
-                    <TextView
-                        android:id="@+id/tv_tipeDetail"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bg_tipekos"
-                        android:fontFamily="@font/nunito_sans_semibold"
-                        android:gravity="center"
-                        android:paddingHorizontal="4dp"
-                        android:paddingVertical="2dp"
-                        android:text="@string/tipekos"
-                        android:textColor="#70000000"
-                        android:textSize="9sp" />
 
-                    <LinearLayout
+                    <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:orientation="vertical">
+                        android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/tv_namaItem"
-                            android:layout_width="match_parent"
+                            android:id="@+id/tv_tipeDetail"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/nunito_sans_bold"
-                            android:text="@string/nama_kos"
-                            android:textColor="@color/PrimaryColor"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/tv_lokasiItem"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_tipekos"
                             android:fontFamily="@font/nunito_sans_semibold"
-                            android:text="@string/lokasi"
-                            android:textColor="@color/SecondaryColor"
-                            android:textSize="13sp" />
-
-                        <TextView
-                            android:id="@+id/tv_fasItem"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/nunito_sans"
-                            android:text="@string/fasilitas"
-                            android:textSize="11sp" />
+                            android:gravity="center"
+                            android:paddingHorizontal="4dp"
+                            android:paddingVertical="2dp"
+                            android:text="@string/tipekos"
+                            android:textColor="#70000000"
+                            android:textSize="9sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
                         <LinearLayout
+                            android:id="@+id/linearLayout3"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="start|center"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:id="@+id/imageView14"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginRight="5dp"
-                                app:srcCompat="@drawable/ic_rating_fill" />
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_tipeDetail">
 
                             <TextView
-                                android:id="@+id/tv_ratingItem"
-                                android:layout_width="wrap_content"
+                                android:id="@+id/tv_namaItem"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/nunito_sans_bold"
-                                android:text="@string/rating"
-                                android:textSize="9sp" />
+                                android:text="@string/nama_kos"
+                                android:textColor="@color/PrimaryColor"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/tv_alamatItem"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/nunito_sans_semibold"
+                                android:text="@string/alamat"
+                                android:textColor="@color/SecondaryColor"
+                                android:textSize="11sp" />
+
                         </LinearLayout>
 
-                    </LinearLayout>
+                        <TextView
+                            android:id="@+id/tv_hargaItem"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/nunito_sans_semibold"
+                            android:text="@string/harga"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/SecondaryColor"
+                            android:textSize="13sp"
+                            app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+                            tools:layout_editor_absoluteX="0dp" />
 
-                    <TextView
-                        android:id="@+id/tv_hargaItem"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/nunito_sans_bold"
-                        android:text="@string/harga"
-                        android:textAlignment="textEnd"
-                        android:textColor="@color/SecondaryColor"
-                        android:textSize="13sp" />
-
+                    </androidx.constraintlayout.widget.ConstraintLayout>
                 </LinearLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,29 +8,40 @@
     android:background="@color/ScreenColor"
     tools:context=".ui.loginRegisterPage.LoginActivity">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/materialToolbar"
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/PrimaryColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:navigationIcon="@drawable/ic_backbtn_lightgreen"/>
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/materialToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/PrimaryColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_backbtn_lightgreen" />
+    </com.google.android.material.appbar.AppBarLayout>
+
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="40dp"
         android:layout_marginRight="20dp"
         android:orientation="vertical"
         app:flow_verticalGap="28dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialToolbar">
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -140,11 +151,11 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_masukLogin"
-                android:text="Masuk"
+                style="@style/GreenButtonForm"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                style="@style/GreenButtonForm"
                 android:background="@drawable/bg_btn_green"
+                android:text="Masuk"
                 android:textAllCaps="false" />
 
             <TextView

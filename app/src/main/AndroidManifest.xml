@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Kostify"
         tools:targetApi="31">
         <activity
+            android:name=".ui.FilterKostActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.profil.ChangePasswordActivity"
             android:exported="false" />
         <activity
@@ -27,7 +30,7 @@
             android:name=".ui.loginRegisterPage.VerificationActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.loginRegisterPage.LoginActivity"
+            android:name=".ui.splashScreen.SplashScreen"
             android:exported="false" />
         <activity
             android:name=".ui.profil.ProfileActivity"
@@ -39,9 +42,6 @@
             android:name=".ui.loginRegisterPage.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.ListKosActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.HomeScreenActivity"
             android:exported="false" />
         <activity
@@ -51,11 +51,11 @@
             android:name=".ui.loginRegisterPage.LupaPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.SearchKosActivity"
-            android:exported="true"/>
+            android:name=".ui.loginRegisterPage.LoginActivity"
+            android:exported="true" />
         <activity
-            android:name=".ui.splashScreen.SplashScreen"
-            android:exported="true" >
+            android:name=".ui.SearchKosActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
