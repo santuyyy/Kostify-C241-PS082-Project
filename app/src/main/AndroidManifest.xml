@@ -30,7 +30,7 @@
             android:name=".ui.loginRegisterPage.VerificationActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.splashScreen.SplashScreen"
+            android:name=".ui.SearchKosActivity"
             android:exported="false" />
         <activity
             android:name=".ui.profil.ProfileActivity"
@@ -54,7 +54,7 @@
             android:name=".ui.loginRegisterPage.LoginActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.SearchKosActivity"
+            android:name=".ui.splashScreen.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

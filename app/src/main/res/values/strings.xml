@@ -9,10 +9,15 @@
 
 
     <!--    Onboard Page text -->
-    <string name="onboardpage1">Selamat Datang di Kostify</string>
-    <string name="onboardpage2">Temukan Kos yang terbaik bagimu</string>
-    <string name="onboardpage3">Kenali Informasi tentang Kos
-yang kamu cari</string>
+    <string name="title_menu_1">Kostify App</string>
+    <string name="title_menu_2">Temukan Kos Yang Terbaik Bagimu</string>
+    <string name="title_menu_3">Kenali Informasi Kos yang Kamu Cari</string>
+    <string name="title_menu_4">Selamat Mencoba Kostify</string>
+    <string name="desc_menu_1">Selamat datang di Aplikasi Kostify Rekomendasi Kos Impianmu.</string>
+    <string name="desc_menu_2">Temukan Harga, Fasilitas, Tipe, dan Lokasi Kos yang Kamu Inginkan.</string>
+    <string name="desc_menu_3">Dapatkan Detail Infromasi Tentang Kos Kamu dengan Mudah dan Jelas.</string>
+    <string name="desc_menu_4">Daftarkan Dirimu di Kostify Sekarang Juga.</string>
+    <string name="learn_now">Mulai Sekarang</string>
 
 
     <!--  card Kos  -->

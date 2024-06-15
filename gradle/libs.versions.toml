@@ -24,6 +24,7 @@ playServicesAuth = "21.1.1"
 kotlinParcelize = "1.9.0"
 retrofit = "2.9.0"
 roomRuntime = "2.6.1"
+firebaseAuthKtx = "23.0.0"
 
 
 
@@ -56,6 +57,7 @@ firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version
 play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
 bumptech-glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide-version" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx", version.ref = "firebaseAuthKtx" }
 
 
 
