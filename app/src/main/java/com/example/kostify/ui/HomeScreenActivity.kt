@@ -12,6 +12,7 @@ import com.example.kostify.adapter.RandomKosAdapter
 import com.example.kostify.data.api.response.RandomkostitemItem
 import com.example.kostify.databinding.ActivityHomeScreenBinding
 import com.example.kostify.ui.loginRegisterPage.LoginActivity
+import com.example.kostify.ui.loginRegisterPage.RegisterActivity
 import com.example.kostify.ui.profil.ProfileActivity
 import com.example.kostify.viewmodel.HomeScreenViewModel
 import com.google.firebase.auth.FirebaseAuth
@@ -50,6 +51,11 @@ class HomeScreenActivity : AppCompatActivity() {
 
         binding.ivArrowHomeToList.setOnClickListener {
             startActivity(Intent(this, SearchKosActivity::class.java))
+        }
+
+        binding.ivArrowHomeToList.setOnClickListener {
+            startActivity(Intent(this, SearchKosActivity::class.java))
+            finish()
         }
 
         binding.bottomNavigationView.selectedItemId = R.id.nav_home

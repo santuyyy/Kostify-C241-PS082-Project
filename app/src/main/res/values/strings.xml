@@ -7,7 +7,6 @@
     <string name="splashscreendesc_row2">
         bersama kami</string>
 
-
     <!--    Onboard Page text -->
     <string name="title_menu_1">Kostify App</string>
     <string name="title_menu_2">Temukan Kos Yang Terbaik Bagimu</string>
@@ -19,9 +18,38 @@
     <string name="desc_menu_4">Daftarkan Dirimu di Kostify Sekarang Juga.</string>
     <string name="learn_now">Mulai Sekarang</string>
 
+    <!--    Login Page -->
+    <string name="title1_login">Masuk Pencari</string>
+    <string name="title2_login">Kos</string>
+    <string name="email_login">Email</string>
+    <string name="katasandi_login">Kata Sandi</string>
+    <string name="atau">Atau</string>
+    <string name="blmakun_login">Belum punya akun Kostify?</string>
+    <string name="btndaftar_login"> Daftar Sekarang</string>
+    <string name="btnlupa_login">Lupa Password</string>
+
+    <!--    Register Page -->
+    <string name="title1_reg">Daftar Pencari</string>
+    <string name="title2_reg">Kos</string>
+    <string name="nama_reg">Nama Lengkap</string>
+    <string name="email_reg">Email</string>
+    <string name="katasandi_reg">Kata Sandi</string>
+    <string name="konfirmsandi_reg">Konfirmasi Kata Sandi</string>
+    <string name="sudahakun_reg">Sudah punya akun Kostify?</string>
+    <string name="btnmasuk_reg"> Masuk Disini</string>
+
+    <!--  Home Screen  -->
+    <string name="title_home">Temukan Kos Impianmpu</string>
+    <string name="title2_home">Bersama Kami</string>
+    <string name="tipe_home">Tipe Kos</string>
+    <string name="rekomendasi_home">Pilihan Kos Rekomendasi Untukmu</string>
+    <string name="rekomendasi2_home">Yuk cek kos yang baru join Kostify</string>
+
 
     <!--  card Kos  -->
-    <string name="tipekos">Campur</string>
+    <string name="tipekos">Campuran</string>
+    <string name="tipekos2">Perempuan</string>
+    <string name="tipekos3">Laki-laki</string>
     <string name="nama_kos">Kos Kartika</string>
     <string name="alamat">Kos Kartika Jaya Residence II
 Queesize Bedroom Kelapa Belalai

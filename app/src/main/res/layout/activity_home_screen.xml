@@ -70,7 +70,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/nunito_sans_bold"
-                            android:text="Temukan Kos Impianmu"
+                            android:text="@string/title_home"
                             android:textColor="@color/PrimaryColor"
                             android:textSize="20sp" />
 
@@ -79,7 +79,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/nunito_sans_semibold"
-                            android:text="Bersama Kami"
+                            android:text="@string/title2_home"
                             android:textColor="@color/SecondaryColor"
                             android:textSize="16sp" />
                     </LinearLayout>
@@ -100,7 +100,7 @@
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/crl_iklanHome"
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="140dp"
                 android:layout_marginTop="24dp"
                 android:background="#878787"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -123,7 +123,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:fontFamily="@font/nunito_sans_bold"
-                    android:text="Tipe Kos"
+                    android:text="@string/tipe_home"
                     android:textColor="@color/PrimaryColor"
                     android:textSize="16sp" />
 
@@ -144,7 +144,7 @@
                         android:paddingVertical="2dp"
                         android:text="@string/tipekos"
                         android:textColor="#70000000"
-                        android:textSize="11sp" />
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/tv_ceweHome"
@@ -156,9 +156,9 @@
                         android:gravity="center"
                         android:paddingHorizontal="4dp"
                         android:paddingVertical="2dp"
-                        android:text="@string/tipekos"
+                        android:text="@string/tipekos2"
                         android:textColor="#70000000"
-                        android:textSize="11sp" />
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/tv_campurHome"
@@ -169,9 +169,9 @@
                         android:gravity="center"
                         android:paddingHorizontal="4dp"
                         android:paddingVertical="2dp"
-                        android:text="@string/tipekos"
+                        android:text="@string/tipekos3"
                         android:textColor="#70000000"
-                        android:textSize="11sp" />
+                        android:textSize="12sp" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -203,7 +203,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/nunito_sans_bold"
-                            android:text="Pilihan Kos Rekomendasi Untukmu"
+                            android:text="@string/rekomendasi_home"
                             android:textColor="@color/PrimaryColor"
                             android:textSize="16sp" />
 
@@ -212,7 +212,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/nunito_sans_semibold"
-                            android:text="Yuk cek kos yang baru join Kostify"
+                            android:text="@string/rekomendasi2_home"
                             android:textColor="@color/SecondaryColor"
                             android:textSize="14sp" />
                     </LinearLayout>
