@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="lokasi_array">
+        <item>Beji, Depok</item>
+        <item>Bekasi Barat, Bekasi</item>
+        <item>Bekasi Selatan, Bekasi</item>
+        <item>Bekasi Timur, Bekasi</item>
+        <item>Bekasi Utara, Bekasi</item>
+        <item>Bogor Barat, Bogor</item>
+        <item>Bogor Selatan, Bogor</item>
+        <item>Bogor Tengah, Bogor</item>
+        <item>Bogor Timur, Bogor</item>
+        <item>Bogor Utara, Bogor</item>
+        <item>Cimanggis, Depok</item>
+        <item>Jakarta Barat, Jakarta</item>
+        <item>Jakarta Pusat, Jakarta</item>
+        <item>Jakarta Selatan, Jakarta</item>
+        <item>Jakarta Timur, Jakarta</item>
+        <item>Jakarta Utara, Jakarta</item>
+        <item>Limo, Depok</item>
+        <item>Pancoran Mas, Depok</item>
+        <item>Sukmajaya, Depok</item>
+        <item>Tangerang Kota, Tangerang</item>
+        <item>Tangerang Selatan, Tangerang</item>
+        <item>Tangerang Utara, Tangerang</item>
+    </string-array>
+
+    <string-array name="jenis_kos_array">
+        <item>Laki-laki</item>
+        <item>Perempuan</item>
+        <item>Campuran</item>
+    </string-array>
+</resources>

@@ -4,11 +4,11 @@ import com.google.gson.annotations.SerializedName
 
 data class RandomKostResponse(
 
-	@field:SerializedName("RandomKostResponse")
-	val randomKostResponse: List<RandomKostResponseItem?>? = null
+	@field:SerializedName("randomkostitem")
+	val randomkostitem: List<RandomkostitemItem?>? = null
 )
 
-data class RandomKostResponseItem(
+data class RandomkostitemItem(
 
 	@field:SerializedName("gender")
 	val gender: String? = null,
@@ -23,7 +23,7 @@ data class RandomKostResponseItem(
 	val deskripsi: String? = null,
 
 	@field:SerializedName("id")
-	val id: String? = null,
+	val id: Int? = null,
 
 	@field:SerializedName("Luas kamar")
 	val luasKamar: String? = null,

@@ -2,14 +2,10 @@ package com.example.kostify.ui.profil
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.kostify.R
-import com.example.kostify.databinding.ActivityDetailKos2Binding
 import com.example.kostify.databinding.ActivityProfileBinding
-import com.example.kostify.databinding.ActivitySearchKosBinding
 import com.example.kostify.ui.FavoriteActivity
 import com.example.kostify.ui.HomeScreenActivity
 import com.example.kostify.ui.SearchKosActivity
@@ -27,7 +23,6 @@ class ProfileActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         binding = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -59,6 +54,7 @@ class ProfileActivity : AppCompatActivity() {
         binding.btnKeluar.setOnClickListener{
             auth.signOut()
             startActivity(Intent(this@ProfileActivity, LoginActivity::class.java))
+            Toast.makeText(this, "Logout berhasil", Toast.LENGTH_SHORT).show()
         }
     }
 

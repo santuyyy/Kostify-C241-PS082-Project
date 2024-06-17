@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
@@ -46,7 +46,7 @@
                 android:id="@+id/linearLayout5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="36dp"
+                android:layout_marginTop="8dp"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -59,6 +59,7 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
+                        android:gravity="center"
                         android:orientation="vertical"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -69,18 +70,18 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/nunito_sans_bold"
-                            android:textSize="19sp"
+                            android:text="Temukan Kos Impianmu"
                             android:textColor="@color/PrimaryColor"
-                            android:text="Temukan Kos Impianmu" />
+                            android:textSize="20sp" />
 
                         <TextView
                             android:id="@+id/textView29"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/nunito_sans"
-                            android:textSize="16sp"
+                            android:fontFamily="@font/nunito_sans_semibold"
+                            android:text="Bersama Kami"
                             android:textColor="@color/SecondaryColor"
-                            android:text="Bersama Kami" />
+                            android:textSize="16sp" />
                     </LinearLayout>
 
                     <ImageView
@@ -99,8 +100,8 @@
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/crl_iklanHome"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:layout_marginTop="32dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="24dp"
                 android:background="#878787"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -110,7 +111,7 @@
                 android:id="@+id/linearLayout6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="36dp"
+                android:layout_marginTop="24dp"
                 android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -120,11 +121,11 @@
                     android:id="@+id/textView36"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
                     android:fontFamily="@font/nunito_sans_bold"
-                    android:text="TextView"
+                    android:text="Tipe Kos"
                     android:textColor="@color/PrimaryColor"
-                    android:textSize="19sp"
-                    android:layout_marginBottom="8dp"/>
+                    android:textSize="16sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -135,6 +136,7 @@
                         android:id="@+id/tv_cowoHome"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginRight="6dp"
                         android:background="@drawable/bg_tipekos"
                         android:fontFamily="@font/nunito_sans_semibold"
                         android:gravity="center"
@@ -142,12 +144,13 @@
                         android:paddingVertical="2dp"
                         android:text="@string/tipekos"
                         android:textColor="#70000000"
-                        android:textSize="11sp"
-                        android:layout_marginRight="6dp"/>
+                        android:textSize="11sp" />
+
                     <TextView
                         android:id="@+id/tv_ceweHome"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginRight="6dp"
                         android:background="@drawable/bg_tipekos"
                         android:fontFamily="@font/nunito_sans_semibold"
                         android:gravity="center"
@@ -155,8 +158,8 @@
                         android:paddingVertical="2dp"
                         android:text="@string/tipekos"
                         android:textColor="#70000000"
-                        android:textSize="11sp"
-                        android:layout_marginRight="6dp"/>
+                        android:textSize="11sp" />
+
                     <TextView
                         android:id="@+id/tv_campurHome"
                         android:layout_width="wrap_content"
@@ -177,7 +180,7 @@
                 android:id="@+id/linearLayout7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="16dp"
                 android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -200,22 +203,22 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/nunito_sans_bold"
-                            android:textSize="19sp"
+                            android:text="Pilihan Kos Rekomendasi Untukmu"
                             android:textColor="@color/PrimaryColor"
-                            android:text="TextView" />
+                            android:textSize="16sp" />
 
                         <TextView
                             android:id="@+id/textView35"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/nunito_sans"
-                            android:textSize="16sp"
+                            android:fontFamily="@font/nunito_sans_semibold"
+                            android:text="Yuk cek kos yang baru join Kostify"
                             android:textColor="@color/SecondaryColor"
-                            android:text="TextView" />
+                            android:textSize="14sp" />
                     </LinearLayout>
 
                     <ImageView
-                        android:id="@+id/iv_arrowHome"
+                        android:id="@+id/iv_arrowHomeToList"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -231,10 +234,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout7" />
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <ProgressBar
+                android:id="@+id/progressBar4"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/rv_listHome"
+                app:layout_constraintEnd_toEndOf="@+id/rv_listHome"
+                app:layout_constraintStart_toStartOf="@+id/rv_listHome"
+                app:layout_constraintTop_toTopOf="@+id/rv_listHome" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>

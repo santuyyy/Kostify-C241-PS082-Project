@@ -1,6 +1,7 @@
 package com.example.kostify.data.api.response
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class KostResponse(
 
@@ -30,4 +31,4 @@ data class ItemsItem(
 
 	@field:SerializedName("alamat")
 	val alamat: String? = null
-)
+): Serializable

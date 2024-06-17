@@ -50,14 +50,16 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:srcCompat="@drawable/ic_backbtn_darkgreen" />
 
-                    <ImageView
-                        android:id="@+id/imageView12"
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/fab_fav"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:clickable="true"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:srcCompat="@drawable/ic_heart_redoutlined" />
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </LinearLayout>
@@ -95,11 +97,11 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="24dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="270dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
@@ -153,7 +155,7 @@
                     android:gravity="end"
                     android:text="@string/harga"
                     android:textColor="@color/SecondaryColor"
-                    android:textSize="16sp" />
+                    android:textSize="19sp" />
             </LinearLayout>
 
         </LinearLayout>
@@ -179,16 +181,16 @@
                 android:fontFamily="@font/nunito_sans_semibold"
                 android:text="Luas Kamar"
                 android:textColor="@color/PrimaryColor"
-                android:textSize="13sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/tv_luasKamarDetail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/luaskamar"
                 android:fontFamily="@font/nunito_sans"
+                android:text="@string/luaskamar"
                 android:textColor="@color/SecondaryColor"
-                android:textSize="11sp" />
+                android:textSize="13sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -204,7 +206,7 @@
                 android:fontFamily="@font/nunito_sans_semibold"
                 android:text="Deskripsi"
                 android:textColor="@color/PrimaryColor"
-                android:textSize="13sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/tv_deskDetail"
@@ -213,7 +215,7 @@
                 android:fontFamily="@font/nunito_sans"
                 android:text="@string/deskripsi"
                 android:textColor="@color/SecondaryColor"
-                android:textSize="11sp" />
+                android:textSize="13sp" />
 
         </LinearLayout>
     </LinearLayout>

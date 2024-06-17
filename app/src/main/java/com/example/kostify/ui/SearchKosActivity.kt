@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
-class SearchKosActivity : AppCompatActivity()/*, KosAdapter.ListViewHolder.UserItemClickListener*/{
+class SearchKosActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySearchKosBinding
     private lateinit var adapter: KosAdapter
@@ -31,7 +30,6 @@ class SearchKosActivity : AppCompatActivity()/*, KosAdapter.ListViewHolder.UserI
         super.onCreate(savedInstanceState)
         binding = ActivitySearchKosBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        enableEdgeToEdge()
 
         auth = Firebase.auth
 
@@ -41,10 +39,17 @@ class SearchKosActivity : AppCompatActivity()/*, KosAdapter.ListViewHolder.UserI
             startActivity(intent)
         }
 
+        showLoading(false)
         binding.rvListKos.layoutManager = LinearLayoutManager(this)
         binding.rvListKos.adapter = adapter
+        val listRekomendasi: List<ItemsItem?>? =
+            intent.getSerializableExtra("listKos") as? ArrayList<ItemsItem?>
+        if (listRekomendasi != null) {
+            showLoading(false)
+            getRekomendasiKost(listRekomendasi)
+        }
 
-        viewModel.listKos.observe(this) {listKos ->
+        viewModel.listKos.observe(this) { listKos ->
             getDataKos(listKos)
         }
 
@@ -60,20 +65,24 @@ class SearchKosActivity : AppCompatActivity()/*, KosAdapter.ListViewHolder.UserI
                     searchBar.setText(searchView.text)
                     viewModel.findKostSearch(searchView.text.toString())
                     searchView.hide()
-                        Toast.makeText(this@SearchKosActivity,searchView.text, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@SearchKosActivity, searchView.text, Toast.LENGTH_SHORT)
+                        .show()
                     false
                 }
+
+
         }
 
         binding.searchBar.apply {
             menuInflater.inflate(R.menu.searchbar_menu, menu)
             setOnMenuItemClickListener { menuItem ->
-                when (menuItem.itemId){
+                when (menuItem.itemId) {
                     R.id.btn_filter -> {
                         val intent = Intent(this@SearchKosActivity, FilterKostActivity::class.java)
                         startActivity(intent)
                         true
                     }
+
                     else -> false
                 }
             }
@@ -86,17 +95,21 @@ class SearchKosActivity : AppCompatActivity()/*, KosAdapter.ListViewHolder.UserI
                     startActivity(Intent(this, HomeScreenActivity::class.java))
                     true
                 }
+
                 R.id.nav_favorite -> {
                     startActivity(Intent(this, FavoriteActivity::class.java))
                     true
                 }
+
                 R.id.nav_search -> {
                     true
                 }
+
                 R.id.nav_profile -> {
                     startActivity(Intent(this, ProfileActivity::class.java))
                     true
                 }
+
                 else -> false
             }
         }
@@ -107,9 +120,17 @@ class SearchKosActivity : AppCompatActivity()/*, KosAdapter.ListViewHolder.UserI
 
     }
 
+    private fun getRekomendasiKost(item: List<ItemsItem?>?) {
+        adapter.submitList(item)
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+    }
+
     private fun checkIfUserLogged() {
         val firebaseUser = auth.currentUser
-        if(firebaseUser == null){
+        if (firebaseUser == null) {
             startActivity(
                 Intent(
                     this,
@@ -117,10 +138,6 @@ class SearchKosActivity : AppCompatActivity()/*, KosAdapter.ListViewHolder.UserI
                 )
             )
         }
-    }
-
-    private fun showLoading(isLoading: Boolean) {
-        binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
     }
 
     override fun onStart() {

@@ -48,6 +48,9 @@
             android:name=".ui.DetailKosActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.FavoriteActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.loginRegisterPage.LupaPasswordActivity"
             android:exported="false" />
         <activity

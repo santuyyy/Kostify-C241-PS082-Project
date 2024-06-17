@@ -24,9 +24,7 @@ class RegisterActivity : AppCompatActivity() {
 
         auth = Firebase.auth
 
-        binding.materialToolbar.setNavigationOnClickListener {
-            startActivity(Intent(this@RegisterActivity, LoginActivity::class.java))
-            finish()
+        binding.materialToolbar.setNavigationOnClickListener { finish()
         }
 
         binding.tvMasukRegis.setOnClickListener {

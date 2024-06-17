@@ -7,26 +7,26 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.kostify.R
-import com.example.kostify.data.api.response.ItemsItem
-import com.example.kostify.databinding.ItemListkosBinding
+import com.example.kostify.data.api.response.RandomkostitemItem
+import com.example.kostify.databinding.ItemRandomlistkosBinding
 
-class KosAdapter(
-    private val onItemClick: (ItemsItem) -> Unit
-) : ListAdapter<ItemsItem, KosAdapter.ListViewHolder>(DIFF_CALLBACK) {
+class RandomKosAdapter(
+    private val onItemClick: (RandomkostitemItem) -> Unit
+) : ListAdapter<RandomkostitemItem, RandomKosAdapter.RandomKosViewHolder>(DIFF_CALLBACK) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
-        val binding = ItemListkosBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ListViewHolder(binding)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RandomKosViewHolder {
+        val binding = ItemRandomlistkosBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return RandomKosViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: RandomKosViewHolder, position: Int) {
         val kost = getItem(position)
         holder.bind(kost)
     }
 
-    inner class ListViewHolder(private val binding: ItemListkosBinding) :
+    inner class RandomKosViewHolder(private val binding: ItemRandomlistkosBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(kost: ItemsItem) {
+        fun bind(kost: RandomkostitemItem) {
             binding.apply {
                 tvTipeDetail.text = kost.gender
                 tvNamaItem.text = kost.namaKost
@@ -43,14 +43,18 @@ class KosAdapter(
     }
 
     companion object {
-        val DIFF_CALLBACK = object : DiffUtil.ItemCallback<ItemsItem>() {
-            override fun areItemsTheSame(oldItem: ItemsItem, newItem: ItemsItem): Boolean {
+        val DIFF_CALLBACK = object : DiffUtil.ItemCallback<RandomkostitemItem>() {
+            override fun areItemsTheSame(oldItem: RandomkostitemItem, newItem: RandomkostitemItem): Boolean {
                 return oldItem.id == newItem.id
             }
 
-            override fun areContentsTheSame(oldItem: ItemsItem, newItem: ItemsItem): Boolean {
+            override fun areContentsTheSame(oldItem: RandomkostitemItem, newItem: RandomkostitemItem): Boolean {
                 return oldItem == newItem
             }
         }
     }
+
+
+
+
 }
