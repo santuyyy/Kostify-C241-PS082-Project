@@ -6,6 +6,16 @@
 
         <!-- Search bar hint color-->
         <item name="colorOnSurfaceVariant">@color/SecondaryColor_50</item>
+
+        <!-- FAB Favorite-->
+        <item name="colorPrimaryContainer">@color/SecondaryColor</item>
+        <item name="colorOnPrimaryContainer">@color/FillColor</item>
+
+        <!-- Progress Bar-->
+        <item name="colorSecondary">@color/SecondaryColor_50</item>
+
+        <!--Status Bar-->
+        <item name="android:statusBarColor">@color/PrimaryColor</item>
        <!-- <item name="fontFamily">@font/nunito_sans</item>-->
     </style>
     <style name="Theme.Kostify" parent="Base.Theme.Kostify" />
@@ -54,6 +64,57 @@
         <item name="fontFamily">@font/nunito_sans</item>
     </style>
 
+    <style name="SearViewStyle" parent="Widget.Material3.SearchView">
+        <item name="android:textColorHint">@color/OutlineColor</item>
+        <item name="backgroundTint">@color/OutlineColor</item>
+        <item name="fontFamily">@font/nunito_sans</item>
+    </style>
+    
+    <style name="TextAppearance" parent="TextAppearance.Material3.SearchBar">
+        <item name="fontFamily">@font/nunito_sans</item>
+        <item name="android:textColor">@color/SecondaryColor</item>
+    </style>
 
-   
+    <style name="CustomChipStyle" parent="Widget.Material3.Chip.Filter">
+        <item name="chipBackgroundColor">@color/chip_background</item>
+        <item name="android:textColor">@color/chip_text</item>
+        <item name="chipStrokeColor">@color/PrimaryColor</item>
+        <item name="chipStrokeWidth">1.5dp</item>
+        <item name="checkedIconTint">@color/white</item>
+        <item name="fontFamily">@font/nunito_sans</item>
+    </style>
+
+    <style name="CustomEditTextStyle" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">@color/OutlineColor</item>
+        <item name="boxStrokeColor">@color/edt_outline_color</item>
+        <item name="strokeColor">@color/PrimaryColor_70</item>
+        <item name="android:textColorHint">@color/SecondaryColor_50</item>
+        <item name="hintTextColor">@color/SecondaryColor_50</item>
+        <item name="android:textColor">@color/SecondaryColor</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="boxCornerRadiusBottomStart">5dp</item>
+        <item name="boxCornerRadiusBottomEnd">5dp</item>
+        <item name="boxCornerRadiusTopStart">5dp</item>
+        <item name="boxCornerRadiusTopEnd">5dp</item>
+    </style>
+
+    <style name="CustomDropdownStyle" parent="Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="boxBackgroundColor">@color/OutlineColor</item>
+        <item name="boxStrokeColor">@color/edt_outline_color</item>
+        <item name="strokeColor">@color/PrimaryColor_70</item>
+        <item name="android:textColorHint">@color/SecondaryColor_50</item>
+        <item name="hintTextColor">@color/SecondaryColor_50</item>
+        <item name="android:textColor">@color/SecondaryColor</item>
+        <item name="boxStrokeWidth">2dp</item>
+    </style>
+    
+    <style name="CarouselStyle">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">7dp</item>
+    </style>
+
+    <style name="CustomCircularProgressIndicator" parent="Widget.Material3.CircularProgressIndicator.Legacy">
+        <item name="indicatorColor">@color/SecondaryColor</item>
+        <item name="trackColor">@color/PrimaryColor</item>
+    </style>
 </resources>

@@ -1,6 +1,5 @@
 package com.example.kostify.data.api.response
 
-import com.example.kostify.data.api.response.Bookmark.Bookmark
 import com.google.gson.annotations.SerializedName
 
 data class DetailKostResponse(
@@ -25,7 +24,4 @@ data class DetailKostResponse(
 
 	@field:SerializedName("alamat")
 	val alamat: String? = null,
-
-	@field:SerializedName("bookmarks") // Tambahkan properti baru untuk menyimpan daftar bookmark
-	val bookmarks: List<Bookmark>? = null
 )

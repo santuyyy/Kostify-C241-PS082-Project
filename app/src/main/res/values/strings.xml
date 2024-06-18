@@ -25,7 +25,7 @@
     <string name="katasandi_login">Kata Sandi</string>
     <string name="atau">Atau</string>
     <string name="blmakun_login">Belum punya akun Kostify?</string>
-    <string name="btndaftar_login"> Daftar Sekarang</string>
+    <string name="btndaftar_login">  Daftar Sekarang</string>
     <string name="btnlupa_login">Lupa Password</string>
 
     <!--    Register Page -->
@@ -36,7 +36,7 @@
     <string name="katasandi_reg">Kata Sandi</string>
     <string name="konfirmsandi_reg">Konfirmasi Kata Sandi</string>
     <string name="sudahakun_reg">Sudah punya akun Kostify?</string>
-    <string name="btnmasuk_reg"> Masuk Disini</string>
+    <string name="btnmasuk_reg">  Masuk Disini</string>
 
     <!--  Home Screen  -->
     <string name="title_home">Temukan Kos Impianmpu</string>

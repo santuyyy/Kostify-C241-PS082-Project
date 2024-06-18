@@ -1,18 +1,10 @@
 package com.example.kostify.data.api.retrofit
 
-import com.example.kostify.data.api.response.Bookmark.AddBookmarkRequest
-import com.example.kostify.data.api.response.Bookmark.AddBookmarkResponse
-import com.example.kostify.data.api.response.Bookmark.BookmarkResponse
-import com.example.kostify.data.api.response.Bookmark.RemoveBookmarkRequest
-import com.example.kostify.data.api.response.Bookmark.RemoveBookmarkResponse
 import com.example.kostify.data.api.response.DetailKostResponse
 import com.example.kostify.data.api.response.KostResponse
 import com.example.kostify.data.api.response.RandomKostResponse
 import retrofit2.Call
-import retrofit2.http.Body
 import retrofit2.http.GET
-import retrofit2.http.HTTP
-import retrofit2.http.POST
 import retrofit2.http.Path
 import retrofit2.http.Query
 
@@ -37,7 +29,6 @@ interface ApiService {
         @Query("Listrik") listrik: Int
     ): Call<KostResponse>
 
-
     @GET("api/kost/random-kos")
     fun getRandomKos(): Call<RandomKostResponse>
 
@@ -46,12 +37,12 @@ interface ApiService {
         @Path("id") id: Int
     ): Call<DetailKostResponse>
 
-    @POST("api/bookmark/add")
-    fun addBookmark(@Body addBookmarkRequest: AddBookmarkRequest): Call<AddBookmarkResponse>
+    /*@POST("api/bookmarks/add")
+    fun addBookmark(@Body bookmarkRequest: BookmarkRequest): Call<Void>
 
-    @HTTP(method = "DELETE", path = "api/bookmark/remove", hasBody = true)
-    fun removeBookmark(@Body removeBookmarkRequest: RemoveBookmarkRequest): Call<RemoveBookmarkResponse>
+    @DELETE("api/bookmarks/{bookmarkId}")
+    fun removeBookmark(@Path("bookmarkId") bookmarkId: String): Call<Void>
 
-    @GET("api/bookmark/{userId}")
-    fun getBookmarks(@Path("userId") userId: String): Call<BookmarkResponse>
+    @GET("api/bookmarks/{userId}")
+    fun getBookmarks(@Path("userId") userId: String): Call<List<BookmarkResponse>>*/
 }

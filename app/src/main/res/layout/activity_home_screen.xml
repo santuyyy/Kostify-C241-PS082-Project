@@ -97,15 +97,52 @@
 
             </LinearLayout>
 
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/crl_iklanHome"
+
+            <ViewFlipper
+                android:id="@+id/ViewFlipper"
                 android:layout_width="match_parent"
                 android:layout_height="140dp"
                 android:layout_marginTop="24dp"
-                android:background="#878787"
+                android:autoStart="true"
+                android:flipInterval="1500"
+                android:inAnimation="@android:anim/slide_in_left"
+                android:outAnimation="@android:anim/slide_out_right"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:shapeAppearance="@style/CarouselStyle"
+                    app:srcCompat="@drawable/carousel1"
+                    android:contentDescription="Carousel 1"/>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/carousel1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:shapeAppearance="@style/CarouselStyle"
+                    app:srcCompat="@drawable/carousel2"
+                    android:contentDescription="Carousel 2"/>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/carousel2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:shapeAppearance="@style/CarouselStyle"
+                    app:srcCompat="@drawable/carousel3"
+                    android:contentDescription="Carousel 3"/>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/carousel3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:shapeAppearance="@style/CarouselStyle"
+                    app:srcCompat="@drawable/carousel4"
+                    android:contentDescription="Carousel 4"/>
+            </ViewFlipper>
 
             <LinearLayout
                 android:id="@+id/linearLayout6"
@@ -115,7 +152,7 @@
                 android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/crl_iklanHome">
+                app:layout_constraintTop_toBottomOf="@+id/ViewFlipper">
 
                 <TextView
                     android:id="@+id/textView36"
@@ -242,7 +279,6 @@
 
             <ProgressBar
                 android:id="@+id/progressBar4"
-                style="?android:attr/progressBarStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="@+id/rv_listHome"

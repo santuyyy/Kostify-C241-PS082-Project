@@ -18,9 +18,6 @@ import com.google.firebase.ktx.Firebase
 class DetailKosActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailKos2Binding
     private val viewModel by viewModels<DetailKosViewModel>()
- /*   private val viewModel by viewModels<DetailKosViewModel> {
-        DetailKosViewModelFactory.getInstance(this)
-    }*/
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +26,6 @@ class DetailKosActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         auth = Firebase.auth
-
 
         val kostId = intent.getIntExtra(EXTRA_KOS_ID, -1)
         if (kostId != -1) {
@@ -47,34 +43,21 @@ class DetailKosActivity : AppCompatActivity() {
 
         viewModel.detailKos.observe(this) {
           setKost(it)
-
-            /*setKost(kost)
-            kost?.id?.let {
-                viewModel.checkBookmarkStatus(it.toString())
-            }*/
         }
 
-   /*     viewModel.bookmarkState.observe(this) { isBookmarked ->
-            setFavoriteButtonIcon(isBookmarked ?: false)
+        viewModel.isBookmarked.observe(this) { isBookmarked ->
+            setFavoriteButtonIcon(isBookmarked)
         }
 
-        viewModel.errorState.observe(this) { error ->
-            error?.let {
-                Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
-            }
-        }*/
+        viewModel.bookmarkStatusMessage.observe(this) { message ->
+            Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+        }
 
-      /*  binding.fabFav.setOnClickListener {
-            val kost = viewModel.detailKos.value
-            if (kost != null) {
-                if (viewModel.bookmarkState.value == true) {
-                    val bookmarkId = kost.bookmarks?.firstOrNull { it.kostId == kost.id.toString() }?.id // Ubah kost.id menjadi String
-                    bookmarkId?.let { viewModel.removeBookmark(it) }
-                } else {
-                    viewModel.addBookmark(kost.id ?: 0) // Pastikan fungsi addBookmark menerima tipe data yang sesuai dengan kost.id
-                }
+        binding.fabFav.setOnClickListener {
+            if (kostId != -1) {
+                viewModel.toggleBookmark(kostId)
             }
-        }*/
+        }
     }
 
     private fun setFavoriteButtonIcon(isFavorite: Boolean) {

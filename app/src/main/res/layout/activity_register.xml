@@ -87,7 +87,7 @@
                 android:text="@string/nama_reg"
                 android:textColor="@color/SecondaryColor" />
 
-            <EditText
+           <!-- <EditText
                 android:id="@+id/edt_namaRegis"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -101,7 +101,28 @@
                 android:paddingHorizontal="12dp"
                 android:paddingVertical="10dp"
                 android:textColorHint="#5000554F"
-                android:textSize="16sp" />
+                android:textSize="16sp" />-->
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/CustomEditTextStyle"
+                android:id="@+id/textInputLayout"
+                android:backgroundTint="@color/SecondaryColor"
+                android:layout_width="match_parent"
+                app:startIconDrawable="@drawable/ic_acc_outlined"
+                app:startIconTint="@color/SecondaryColor"
+                app:endIconMode="clear_text"
+                android:layout_height="56dp"
+                android:hint="Masukkan nama">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_namaRegis"
+                    android:layout_width="match_parent"
+                    android:inputType="textPersonName"
+                    android:padding="0dp"
+                    android:textColor="@color/SecondaryColor"
+                    android:fontFamily="@font/nunito_sans"
+                    android:layout_height="match_parent"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
 
@@ -121,7 +142,7 @@
                 android:layout_marginBottom="6dp"
                 android:text="@string/email_reg" />
 
-            <EditText
+<!--            <EditText
                 android:id="@+id/edt_emailRegis"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -135,7 +156,28 @@
                 android:paddingHorizontal="12dp"
                 android:paddingVertical="10dp"
                 android:textColorHint="#5000554F"
-                android:textSize="16sp" />
+                android:textSize="16sp" />-->
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/CustomEditTextStyle"
+                android:id="@+id/textInputLayout2"
+                android:backgroundTint="@color/SecondaryColor"
+                android:layout_width="match_parent"
+                app:startIconDrawable="@drawable/ic_email_outlined"
+                app:startIconTint="@color/SecondaryColor"
+                app:endIconMode="clear_text"
+                android:layout_height="56dp"
+                android:hint="Masukkan email">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_emailRegis"
+                    android:layout_width="match_parent"
+                    android:inputType="textEmailAddress"
+                    android:padding="0dp"
+                    android:textColor="@color/SecondaryColor"
+                    android:fontFamily="@font/nunito_sans"
+                    android:layout_height="match_parent"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
 
@@ -155,7 +197,7 @@
                 android:layout_marginBottom="6dp"
                 android:text="@string/katasandi_reg" />
 
-            <EditText
+        <!--    <EditText
                 android:id="@+id/edt_katasandiRegis"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -170,7 +212,30 @@
                 android:paddingHorizontal="12dp"
                 android:paddingVertical="10dp"
                 android:textColorHint="#5000554F"
-                android:textSize="16sp" />
+                android:textSize="16sp" />-->
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/CustomEditTextStyle"
+                android:id="@+id/textInputLayout3"
+                android:backgroundTint="@color/SecondaryColor"
+                android:layout_width="match_parent"
+                app:startIconDrawable="@drawable/ic_lock_outlined"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/SecondaryColor"
+                app:passwordToggleDrawable="@drawable/ic_eye_outlined"
+                app:startIconTint="@color/SecondaryColor"
+                android:layout_height="56dp"
+                android:hint="Masukkan password">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_katasandiRegis"
+                    android:layout_width="match_parent"
+                    android:inputType="textPassword"
+                    android:padding="0dp"
+                    android:textColor="@color/SecondaryColor"
+                    android:fontFamily="@font/nunito_sans"
+                    android:layout_height="match_parent"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
 
@@ -190,7 +255,7 @@
                 android:layout_marginBottom="6dp"
                 android:text="@string/konfirmsandi_reg" />
 
-            <EditText
+            <!--<EditText
                 android:id="@+id/edt_konfirmsandiRegis"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -205,7 +270,30 @@
                 android:paddingHorizontal="12dp"
                 android:paddingVertical="10dp"
                 android:textColorHint="#5000554F"
-                android:textSize="16sp" />
+                android:textSize="16sp" />-->
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/CustomEditTextStyle"
+                android:id="@+id/textInputLayout4"
+                android:backgroundTint="@color/SecondaryColor"
+                android:layout_width="match_parent"
+                app:startIconDrawable="@drawable/ic_lock_outlined"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/SecondaryColor"
+                app:passwordToggleDrawable="@drawable/ic_eye_outlined"
+                app:startIconTint="@color/SecondaryColor"
+                android:layout_height="56dp"
+                android:hint="Masukkan konfirmasi kata sandi">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_konfirmsandiRegis"
+                    android:layout_width="match_parent"
+                    android:inputType="textPassword"
+                    android:padding="0dp"
+                    android:textColor="@color/SecondaryColor"
+                    android:fontFamily="@font/nunito_sans"
+                    android:layout_height="match_parent"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
 
@@ -240,6 +328,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:layout_marginStart="3dp"
                 android:fontFamily="@font/nunito_sans_semibold"
                 android:text="@string/btnmasuk_reg"
                 android:textColor="@color/PrimaryColor"

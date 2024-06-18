@@ -7,6 +7,7 @@
     <!-- Color Pallete -->
     <color name="ScreenColor">#E6F6F5</color>
     <color name="PrimaryColor">#00A99D</color>
+    <color name="PrimaryColor_70">#7000A99D</color>
     <color name="SecondaryColor">#00554F</color>
     <color name="SecondaryColor_50">#5000554F</color>
     <color name="OutlineColor">#B3E5E2</color>

@@ -12,6 +12,7 @@
         <com.google.android.material.search.SearchBar
             android:id="@+id/searchBar"
             android:layout_width="0dp"
+            android:textAppearance="@style/TextAppearance"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:paddingHorizontal="5dp"
@@ -52,6 +53,8 @@
 
         <com.google.android.material.search.SearchView
             android:id="@+id/searchView"
+            android:textAppearance="@style/TextAppearance"
+            style="@style/SearViewStyle"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:hint="Cari Rekomendasi kos disini"

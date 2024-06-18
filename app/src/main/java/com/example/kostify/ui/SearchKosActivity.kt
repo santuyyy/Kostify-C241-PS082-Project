@@ -42,6 +42,7 @@ class SearchKosActivity : AppCompatActivity() {
         showLoading(false)
         binding.rvListKos.layoutManager = LinearLayoutManager(this)
         binding.rvListKos.adapter = adapter
+
         val listRekomendasi: List<ItemsItem?>? =
             intent.getSerializableExtra("listKos") as? ArrayList<ItemsItem?>
         if (listRekomendasi != null) {

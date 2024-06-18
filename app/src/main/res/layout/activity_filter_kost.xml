@@ -65,7 +65,7 @@
                     android:layout_height="wrap_content"
                     android:text="Harga" />
 
-                <EditText
+               <!-- <EditText
                     android:id="@+id/edt_hargaKost"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
@@ -73,12 +73,35 @@
                     android:layout_marginTop="6dp"
                     android:drawablePadding="10dp"
                     android:ems="10"
+                    android:textColorHint="@color/SecondaryColor_50"
                     android:fontFamily="@font/nunito_sans"
                     android:hint="Masukkan harga"
                     android:inputType="number"
                     android:paddingHorizontal="12dp"
                     android:paddingVertical="10dp"
                     android:textSize="16sp" />
+                -->
+                <com.google.android.material.textfield.TextInputLayout
+                   style="@style/CustomEditTextStyle"
+                    android:id="@+id/textInputLayout"
+                    android:backgroundTint="@color/SecondaryColor"
+                    android:layout_width="match_parent"
+                    app:prefixText="Rp "
+                    app:endIconMode="clear_text"
+                    android:layout_height="match_parent"
+                    android:hint="Masukkan harga">
+                    
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_hargaKost"
+                        android:layout_width="match_parent"
+                        android:inputType="numberDecimal"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/SecondaryColor"
+                        android:fontFamily="@font/nunito_sans"
+
+
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
             <LinearLayout
@@ -103,7 +126,7 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/dropdown_lokasiKost"
                     android:layout_marginTop="6dp"
-                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    style="@style/CustomDropdownStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Pilih Lokasi">
@@ -112,6 +135,7 @@
                         android:id="@+id/tv_lokasiAutoComplete"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_sans"
                         android:inputType="none" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -140,7 +164,7 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/dropdown_jenisKos"
                     android:layout_marginTop="6dp"
-                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    style="@style/CustomDropdownStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Pilih jenis kos">
@@ -149,8 +173,8 @@
                         android:id="@+id/tv_jenisAutoComplete"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_sans"
                         android:inputType="none" />
-                    <!--app:simpleItems="@array/simple_items"-->
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
@@ -180,7 +204,8 @@
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/fasilitas_ac"
-                        style="@style/Widget.Material3.Chip.Filter"
+                        android:fontFamily="@font/nunito_sans"
+                        style="@style/CustomChipStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="true"
@@ -188,42 +213,48 @@
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/fasilitas_kasur"
-                        style="@style/Widget.Material3.Chip.Filter"
+                        android:fontFamily="@font/nunito_sans"
+                        style="@style/CustomChipStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Kasur" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/fasilitas_lemari"
-                        style="@style/Widget.Material3.Chip.Filter"
+                        android:fontFamily="@font/nunito_sans"
+                        style="@style/CustomChipStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Lemari" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/fasilitas_wifi"
-                        style="@style/Widget.Material3.Chip.Filter"
+                        android:fontFamily="@font/nunito_sans"
+                        style="@style/CustomChipStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Wifi" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/fasilitas_wcDuduk"
-                        style="@style/Widget.Material3.Chip.Filter"
+                        android:fontFamily="@font/nunito_sans"
+                        style="@style/CustomChipStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="WC_Duduk" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/fasilitas_kamarmandiDalam"
-                        style="@style/Widget.Material3.Chip.Filter"
+                        android:fontFamily="@font/nunito_sans"
+                        style="@style/CustomChipStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Kamar_mandi_dalam" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/fasilitas_listrik"
-                        style="@style/Widget.Material3.Chip.Filter"
+                        android:fontFamily="@font/nunito_sans"
+                        style="@style/CustomChipStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Listrik" />
