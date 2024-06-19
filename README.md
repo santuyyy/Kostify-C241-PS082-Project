@@ -13,11 +13,11 @@ To run this api in your locally:
 
 1. Change directory to kostify-api
 ```bash
-  cd kostify-api
+  $ cd kostify-api
 ```
 2. run NPM install
 ```bash
-  npm run install
+  $ npm run install
 ```
 3. You need to edit the .env file with your configuration
 ```bash
@@ -36,9 +36,9 @@ FIREBASE_MEASUREMENT_ID="G-WL54FEX8Q8"
 GOOGLE_APPLICATION_CREDENTIALS="./serviceAccountKey.json"
 ```
 4. Create database firestore in firebase
-5. run the 
+5. run file with npm run start
 ```bash
-  npm run start
+  $ npm run start
 ```
 ## Kostify Back-end Collection
 
