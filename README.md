@@ -4,7 +4,7 @@ This project focuses on finding the ideal place to live, which is often challeng
 
 ## Cloud Technology
 
-_The cloud technology used in Kostify
+The cloud technology used in Kostify
 
 **Powered by:**
 
@@ -19,6 +19,7 @@ The cloud technology that used in this project:
 
 -   **Google Cloud Platform**: Suite of cloud computing services provided by Google.
 -   **Firestore**: for the application database.
+-   **Firebase**: for the user authentication.
 -   **App Engine**: For deploying Backend API.
 -   **Cloud Run**: For deploying machine learning model.
 
