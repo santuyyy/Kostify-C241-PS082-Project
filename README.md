@@ -4,7 +4,7 @@ This project focuses on finding the ideal place to live, which is often challeng
 
 ## Cloud Technology
 
-_The cloud technology used in Fruitarians_
+_The cloud technology used in Kostify
 
 **Powered by:**
 
