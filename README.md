@@ -1,4 +1,4 @@
-# Kostify-Backend
+# Kostify-Background
 
 This project focuses on finding the ideal place to live, which is often challenging for some people. High rental costs, fewer strategic locations, and inadequate facilities are the main obstacles to the boarding house search process. To solve this problem, we introduce “Kostify,” a smart boarding house search application specifically designed to make it easier for a user to find a place to live that suits their needs and preferences. Kostify combines advanced technology with a smart and user-friendly interface. This app can provide the right boarding house recommendations based on location, price, facilities, and other preferences the user wants.
 
@@ -7,7 +7,7 @@ This project focuses on finding the ideal place to live, which is often challeng
 - [Reva Rasya Rafsanjani](https://github.com/RevaRafsanjani)
 - [Fachrudin Nur Alfiansyah](https://github.com/aalffi)
 
-## kostify-api
+## Kostify-API
 
 To run this api in your locally:
 
@@ -40,6 +40,6 @@ GOOGLE_APPLICATION_CREDENTIALS="./serviceAccountKey.json"
 ```bash
   npm run start
 ```
-## Kostify Back-end Documentation
+## Kostify Back-end Collection
 
 Postman Collection: [CLICK HERE](https://www.postman.com/speeding-equinox-272267/workspace/api-test-kostify/collection/30911472-8ad794c2-9d65-405f-b413-61a292d11895?action=share&creator=30911472)
