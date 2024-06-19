@@ -1,3 +1,4 @@
 node_modules
+dotenv
 serviceAccountKey.json
-.env
+app.yaml

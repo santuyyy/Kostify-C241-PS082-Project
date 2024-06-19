@@ -1,191 +1,100 @@
 const fs = require('fs');
 const path = require('path');
+const bodyParser = require('body-parser');
+const axios = require('axios');
+const dotenv = require('dotenv');
+dotenv.config();
 
-const kostFilePath = path.join(__dirname, '../data/datakost.json');
+// controller to get random kost
+exports.getRandomKost = (req, res) => {
+    // Terima parameter dari permintaan HTTP
+    const { count, orderBy } = req.query;
 
-// Helper function to read kost data
-function readKostData(callback) {
-    fs.readFile(kostFilePath, 'utf8', (err, data) => {
-        if (err) {
-            return callback(err, null);
-        }
-        const kostData = JSON.parse(data);
-        callback(null, kostData);
+    axios.get(`${process.env.URL_ML}/api/recommendations`)
+        .then(response => {
+            let kostData = response.data;
+            
+            // Urutkan data berdasarkan kriteria yang diberikan
+            kostData = sortByCriteria(kostData, orderBy || 'harga'); // Jika tidak ada orderBy, urutkan berdasarkan harga
+            
+            // Shuffle data setelah diurutkan
+            kostData = shuffleArray(kostData);
+            
+            // Pilih beberapa data secara acak dari data yang sudah diurutkan dan diacak
+            const selectedKosts = selectItems(kostData, count || 10); // Misalnya, pilih 10 data jika count tidak diberikan
+            
+            // Bungkus hasil dengan objek items
+            res.json({ randomkostitem: selectedKosts });
+        })
+        .catch(error => {
+            res.status(500).json({ error: 'Failed to fetch ranked random kost data from ML model' });
+        });
+};
+
+// controller to get random kost with shuffle
+exports.searchKostByParams = (req, res) => {
+    // Dapatkan query parameters dari permintaan
+    const params = req.query;
+    
+    // Lakukan permintaan HTTP ke endpoint model
+    axios.get(`${process.env.URL_ML}/api/recommendations`, {
+        params: params // Sertakan semua query parameters dari permintaan
+    })
+    .then(response => {
+        // Tanggapan yang diterima dari model
+        let kostData = response.data;
+        
+        // Shuffle data setelah menerima respons dari model
+        kostData = shuffleArray(kostData);
+        
+        // Bungkus data dalam objek 'items'
+        const wrappedData = { items: kostData };
+        
+        // Kirim seluruh data yang diterima dan sudah di-shuffle ke klien
+        res.json(wrappedData);
+    })
+    .catch(error => {
+        // Tangani kesalahan jika permintaan gagal
+        res.status(500).json({ error: 'Failed to fetch shuffled kost data from ML model' });
+    });
+};
+
+// controller to get kost by ID
+exports.getKostById = (req, res) => {
+    const id = req.params.id;
+    
+    axios.get(`${process.env.URL_ML}/kosan/${id}`)
+        .then(response => {
+            const kostData = response.data;
+            res.json(kostData);
+        })
+        .catch(error => {
+            res.status(500).json({ error: 'Failed to fetch kost data by ID from ML model' });
+        });
+};
+
+// Fungsi untuk mengurutkan data berdasarkan kriteria tertentu
+function sortByCriteria(array, orderBy) {
+    return array.sort((a, b) => {
+        // Ubah nilai ke dalam bentuk angka jika perlu
+        const aValue = parseFloat(a[orderBy]) || 0;
+        const bValue = parseFloat(b[orderBy]) || 0;
+        
+        // Bandingkan nilai berdasarkan kriteria yang diberikan
+        return aValue - bValue;
     });
 }
 
-// Kontroller untuk pencarian data kost dengan query parameters
-exports.searchKost = (req, res) => {
-    readKostData((err, kostData) => {
-        if (err) {
-            return res.status(500).json({ error: 'Failed to read kost data' });
-        }
+// Fungsi untuk mengacak urutan elemen dalam array
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
 
-        // Mengambil query parameters
-        const { lokasi_jabodetabek, harga, AC } = req.query;
-
-        // Filter data kost berdasarkan query parameters
-        let filteredKost = kostData;
-
-        if (lokasi_jabodetabek) {
-            filteredKost = filteredKost.filter(kost => kost.lokasi_jabodetabek.toLowerCase().includes(lokasi_jabodetabek.toLowerCase()));
-        }
-
-        if (harga) {
-            const maxHarga = parseFloat(harga);
-            filteredKost = filteredKost.filter(kost => kost.harga <= maxHarga);
-        }
-
-        if (AC) {
-            const acValue = parseInt(AC);
-            filteredKost = filteredKost.filter(kost => kost.AC === acValue);
-        }
-
-        // Mengirimkan data yang telah difilter sebagai respon
-        res.json(filteredKost);
-    });
-};
-
-// Kontroller untuk pencarian data kost berdasarkan nama
-exports.searchKostByNama = (req, res) => {
-    const nama_kost = req.params.nama_kost.toLowerCase();
-    readKostData((err, kostData) => {
-        if (err) {
-            return res.status(500).json({ error: 'Failed to read kost data' });
-        }
-        const filteredData = kostData.filter(kost => kost.nama_kost.toLowerCase().includes(nama_kost));
-        res.json(filteredData);
-    });
-};
-
-// Kontroller untuk pencarian data kost berdasarkan alamat
-exports.searchKostByAlamat = (req, res) => {
-    const alamat = req.params.alamat.toLowerCase();
-    readKostData((err, kostData) => {
-        if (err) {
-            return res.status(500).json({ error: 'Failed to read kost data' });
-        }
-        const filteredData = kostData.filter(kost => kost.alamat.toLowerCase().includes(alamat));
-        res.json(filteredData);
-    });
-};
-
-// Kontroller untuk pencarian data kost berdasarkan lokasi
-exports.searchKostByLokasi = (req, res) => {
-    const lokasi = req.params.lokasi_jabodetabek.toLowerCase();
-    readKostData((err, kostData) => {
-        if (err) {
-            return res.status(500).json({ error: 'Failed to read kost data' });
-        }
-        const filteredData = kostData.filter(kost => kost.lokasi_jabodetabek.toLowerCase().includes(lokasi));
-        res.json(filteredData);
-    });
-};
-
-// Kontroller untuk pencarian data kost berdasarkan harga
-exports.searchKostByHarga = (req, res) => {
-    const harga = parseInt(req.params.harga);
-    readKostData((err, kostData) => {
-        if (err) {
-            return res.status(500).json({ error: 'Failed to read kost data' });
-        }
-        const filteredData = kostData.filter(kost => kost.harga === harga);
-        res.json(filteredData);
-    });
-};
-
-// Kontroller untuk pencarian data kost berdasarkan fasilitas AC
-exports.searchKostByAC = (req, res) => {
-    const AC = parseInt(req.params.AC);
-    readKostData((err, kostData) => {
-        if (err) {
-            return res.status(500).json({ error: 'Failed to read kost data' });
-        }
-        const filteredData = kostData.filter(kost => kost.AC === AC);
-        res.json(filteredData);
-    });
-};
-
-// Kontroller untuk pencarian data kost berdasarkan jumlah Kasur
-exports.searchKostByKasur = (req, res) => {
-    const Kasur = parseInt(req.params.Kasur);
-    readKostData((err, kostData) => {
-        if (err) {
-            return res.status(500).json({ error: 'Failed to read kost data' });
-        }
-        const filteredData = kostData.filter(kost => kost.Kasur === Kasur);
-        res.json(filteredData);
-    });
-};
-
-// Kontroller untuk pencarian data kost berdasarkan keberadaan Lemari
-exports.searchKostByLemari = (req, res) => {
-    const Lemari = parseInt(req.params.Lemari);
-    readKostData((err, kostData) => {
-        if (err) {
-            return res.status(500).json({ error: 'Failed to read kost data' });
-        }
-        const filteredData = kostData.filter(kost => kost.Lemari === Lemari);
-        res.json(filteredData);
-    });
-};
-
-// Kontroller untuk pencarian data kost berdasarkan ketersediaan WiFi
-exports.searchKostByWiFi = (req, res) => {
-    const WiFi = parseInt(req.params.WiFi);
-    readKostData((err, kostData) => {
-        if (err) {
-            return res.status(500).json({ error: 'Failed to read kost data' });
-        }
-        const filteredData = kostData.filter(kost => kost.WiFi === WiFi);
-        res.json(filteredData);
-    });
-};
-
-// Kontroller untuk pencarian data kost berdasarkan ketersediaan Wc_duduk
-exports.searchKostByWc = (req, res) => {
-    const Wc_duduk = parseInt(req.params.Wc_duduk);
-    readKostData((err, kostData) => {
-        if (err) {
-            return res.status(500).json({ error: 'Failed to read kost data' });
-        }
-        const filteredData = kostData.filter(kost => kost.Wc_duduk === Wc_duduk);
-        res.json(filteredData);
-    });
-};
-
-// Kontroller untuk pencarian data kost berdasarkan ketersediaan Kamar_mandi_dalam
-exports.searchKostByKamarMandiDalam = (req, res) => {
-    const Kamar_mandi_dalam = parseInt(req.params.Kamar_mandi_dalam);
-    readKostData((err, kostData) => {
-        if (err) {
-            return res.status(500).json({ error: 'Failed to read kost data' });
-        }
-        const filteredData = kostData.filter(kost => kost.Kamar_mandi_dalam === Kamar_mandi_dalam);
-        res.json(filteredData);
-    });
-};
-
-// Kontroller untuk pencarian data kost berdasarkan fasilitas Listrik
-exports.searchKostByListrik = (req, res) => {
-    const Listrik = parseInt(req.params.Listrik);
-    readKostData((err, kostData) => {
-        if (err) {
-            return res.status(500).json({ error: 'Failed to read kost data' });
-        }
-        const filteredData = kostData.filter(kost => kost.Listrik === Listrik);
-        res.json(filteredData);
-    });
-};
-
-// Kontroller untuk pencarian data kost berdasarkan luas kamar
-exports.searchKostByLuasKamar = (req, res) => {
-    const Luas_kamar = req.params.Luas_kamar;
-    readKostData((err, kostData) => {
-        if (err) {
-            return res.status(500).json({ error: 'Failed to read kost data' });
-        }
-        const filteredData = kostData.filter(kost => kost.Luas_kamar === Luas_kamar);
-        res.json(filteredData);
-    });
-};
+// Fungsi untuk memilih beberapa item dari array
+function selectItems(array, count) {
+    return array.slice(0, count);
+}
