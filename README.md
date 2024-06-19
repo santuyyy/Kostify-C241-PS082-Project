@@ -20,7 +20,6 @@ The cloud technology that used in this project:
 -   **Google Cloud Platform**: Suite of cloud computing services provided by Google.
 -   **Firestore**: for the application database.
 -   **App Engine**: For deploying Backend API.
--   **Cloud Storage**: For storing the assets.
 -   **Cloud Run**: For deploying machine learning model.
 
 ## Authors
