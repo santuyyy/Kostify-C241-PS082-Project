@@ -41,6 +41,8 @@ class HomeScreenActivity : AppCompatActivity() {
         binding.rvListHome.layoutManager = LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)
         binding.rvListHome.adapter = adapter
 
+        viewModel.getRandomKos()
+
         viewModel.listRandomKos.observe(this) { listRandomKos ->
             if (listRandomKos != null) {
                 getDataRandomKos(listRandomKos)

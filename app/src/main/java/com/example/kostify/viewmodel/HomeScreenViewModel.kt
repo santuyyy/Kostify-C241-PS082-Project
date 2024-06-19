@@ -23,11 +23,11 @@ class HomeScreenViewModel : ViewModel() {
         const val TAG = "HomeScreenViewModel"
     }
 
-    init {
+   /* init {
         getRandomKos()
-    }
+    }*/
 
-    private fun getRandomKos() {
+    fun getRandomKos() {
         _isLoading.value = true
         val client = ApiConfig.getApiService().getRandomKos()
         client.enqueue(object : Callback<RandomKostResponse> {

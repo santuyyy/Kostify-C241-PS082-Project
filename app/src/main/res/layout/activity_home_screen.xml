@@ -112,7 +112,7 @@
                 android:layout_height="140dp"
                 android:layout_marginTop="24dp"
                 android:autoStart="true"
-                android:flipInterval="1500"
+                android:flipInterval="3000"
                 android:inAnimation="@android:anim/slide_in_left"
                 android:outAnimation="@android:anim/slide_out_right"
                 app:layout_constraintEnd_toEndOf="parent"
