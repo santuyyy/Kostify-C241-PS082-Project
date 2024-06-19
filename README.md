@@ -2,6 +2,27 @@
 
 This project focuses on finding the ideal place to live, which is often challenging for some people. High rental costs, fewer strategic locations, and inadequate facilities are the main obstacles to the boarding house search process. To solve this problem, we introduce “Kostify,” a smart boarding house search application specifically designed to make it easier for a user to find a place to live that suits their needs and preferences. Kostify combines advanced technology with a smart and user-friendly interface. This app can provide the right boarding house recommendations based on location, price, facilities, and other preferences the user wants.
 
+## Cloud Technology
+
+_The cloud technology used in Fruitarians_
+
+**Powered by:**
+
+<p style="text-align: center; background-color: #eee; display: inline-block; padding: 14px 20px; border-radius: 15px;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" width="250"/>
+</p>
+
+Google Cloud Platform (GCP) is a Google-provided set of cloud computing services. It is a platform that offers computing infrastructure and services for running applications, storing and managing data, and developing software solutions.
+
+
+The cloud technology that used in this project:
+
+-   **Google Cloud Platform**: Suite of cloud computing services provided by Google.
+-   **Firestore**: for the application database.
+-   **App Engine**: For deploying Backend API.
+-   **Cloud Storage**: For storing the assets.
+-   **Cloud Run**: For deploying machine learning model.
+
 ## Authors
 
 - [Reva Rasya Rafsanjani](https://github.com/RevaRafsanjani)
