@@ -10,6 +10,7 @@ import com.example.kostify.R
 import com.example.kostify.data.api.response.BookmarkResponseItem
 import com.example.kostify.databinding.ItemListkosBinding
 
+// LIST ADAPTER
 class BookmarkAdapter (
     private val onItemClick: (BookmarkResponseItem) -> Unit
 ) : ListAdapter<BookmarkResponseItem, BookmarkAdapter.BookmarkViewHolder>(DiffCallback) {

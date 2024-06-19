@@ -10,6 +10,7 @@ import com.example.kostify.R
 import com.example.kostify.data.api.response.RandomkostitemItem
 import com.example.kostify.databinding.ItemRandomlistkosBinding
 
+// LIST ADAPTER
 class RandomKosAdapter(
     private val onItemClick: (RandomkostitemItem) -> Unit
 ) : ListAdapter<RandomkostitemItem, RandomKosAdapter.RandomKosViewHolder>(DIFF_CALLBACK) {
@@ -53,8 +54,6 @@ class RandomKosAdapter(
             }
         }
     }
-
-
-
-
 }
+
+

@@ -9,7 +9,7 @@
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="130dp"
         android:backgroundTint="#50CCEEEB"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -89,6 +89,7 @@
                                 android:id="@+id/tv_alamatItem"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:maxLines="2"
                                 android:fontFamily="@font/nunito_sans_semibold"
                                 android:text="@string/alamat"
                                 android:textColor="@color/SecondaryColor"

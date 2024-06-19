@@ -85,11 +85,6 @@ class DetailKosActivity : AppCompatActivity() {
         binding.progressBar2.visibility = if (isLoading) View.VISIBLE else View.GONE
     }
 
-    companion object {
-        const val EXTRA_KOS_ID = "extra_kos_id"
-        private const val TAG = "DetailKosActivity"
-    }
-
     private fun checkIfUserLogged() {
         val firebaseUser = auth.currentUser
         if (firebaseUser == null) {
@@ -106,4 +101,10 @@ class DetailKosActivity : AppCompatActivity() {
         super.onStart()
         checkIfUserLogged()
     }
+    companion object {
+        const val EXTRA_KOS_ID = "extra_kos_id"
+        private const val TAG = "DetailKosActivity"
+    }
+
+
 }

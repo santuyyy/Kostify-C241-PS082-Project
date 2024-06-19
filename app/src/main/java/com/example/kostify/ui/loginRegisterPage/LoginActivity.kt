@@ -68,7 +68,7 @@ class LoginActivity : AppCompatActivity() {
                             val user: FirebaseUser? = auth.currentUser
                             updateUI(user)
                         } else {
-                            Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, "email atau kata sandi tidak valid!", Toast.LENGTH_SHORT).show()
                             updateUI(null)
                         }
                     }

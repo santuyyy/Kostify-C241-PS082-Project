@@ -2,6 +2,7 @@ package com.example.kostify.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -12,7 +13,6 @@ import com.example.kostify.adapter.RandomKosAdapter
 import com.example.kostify.data.api.response.RandomkostitemItem
 import com.example.kostify.databinding.ActivityHomeScreenBinding
 import com.example.kostify.ui.loginRegisterPage.LoginActivity
-import com.example.kostify.ui.loginRegisterPage.RegisterActivity
 import com.example.kostify.ui.profil.ProfileActivity
 import com.example.kostify.viewmodel.HomeScreenViewModel
 import com.google.firebase.auth.FirebaseAuth
@@ -42,7 +42,12 @@ class HomeScreenActivity : AppCompatActivity() {
         binding.rvListHome.adapter = adapter
 
         viewModel.listRandomKos.observe(this) { listRandomKos ->
-            getDataRandomKos(listRandomKos)
+            if (listRandomKos != null) {
+                getDataRandomKos(listRandomKos)
+            } else {
+                // Tangani kasus di mana data random kos null (misalnya, tampilkan pesan kesalahan)
+                Log.e("HomeScreenActivity", "Data random kos null")
+            }
         }
 
         viewModel.isLoading.observe(this) {
@@ -96,7 +101,7 @@ class HomeScreenActivity : AppCompatActivity() {
 
     private fun checkIfUserLogged() {
         val firebaseUser = auth.currentUser
-        if(firebaseUser == null){
+        if (firebaseUser == null) {
             startActivity(
                 Intent(
                     this,

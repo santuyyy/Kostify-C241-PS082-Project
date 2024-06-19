@@ -27,7 +27,7 @@ class FavoriteViewModel : ViewModel() {
         fetchBookmarks()
     }
 
-    fun fetchBookmarks() {
+    private fun fetchBookmarks() {
         viewModelScope.launch {
             _isLoading.value = true
             try {
@@ -44,6 +44,20 @@ class FavoriteViewModel : ViewModel() {
     // Fungsi baru untuk memperbarui LiveData bookmarks
     fun updateBookmarks(newBookmarks: List<BookmarkResponseItem>) {
         _bookmarks.value = newBookmarks
+    }
+
+    fun refreshBookmarks() {
+        viewModelScope.launch {
+            _isLoading.value = true
+            try {
+                val fetchedBookmarks = getBookmarks()
+                updateBookmarks(fetchedBookmarks) // Perbarui LiveData dengan fungsi updateBookmarks()
+            } catch (e: Exception) {
+                _error.value = "Error fetching bookmarks: ${e.message}"
+            } finally {
+                _isLoading.value = false
+            }
+        }
     }
 
     private suspend fun getBookmarks(): List<BookmarkResponseItem> {

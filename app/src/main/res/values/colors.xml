@@ -12,4 +12,6 @@
     <color name="SecondaryColor_50">#5000554F</color>
     <color name="OutlineColor">#B3E5E2</color>
     <color name="FillColor">#E9D521</color>
+    <color name="ErrorColor">#F44336</color>
+
 </resources>

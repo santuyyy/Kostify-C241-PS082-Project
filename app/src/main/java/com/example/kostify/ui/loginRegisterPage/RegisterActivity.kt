@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.kostify.databinding.ActivityRegisterBinding
 import com.example.kostify.ui.HomeScreenActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
@@ -49,15 +50,15 @@ class RegisterActivity : AppCompatActivity() {
                                     )
                                 )
                                 finish()
-                                /*val user: FirebaseUser? = auth.currentUser
-                                updateUI(user)*/
+                                val user: FirebaseUser? = auth.currentUser
+                                updateUI(user)
                             } else {
                                 Toast.makeText(
                                     this,
                                     "Kata sandi atau email salah",
                                     Toast.LENGTH_SHORT
                                 ).show()
-                                /*updateUI(null)*/
+                                updateUI(null)
                             }
                         }
                 } else {
@@ -77,24 +78,7 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    private fun checkIfUserLogged() {
-        val firebaseUser = auth.currentUser
-        if (firebaseUser != null) {
-            startActivity(
-                Intent(
-                    this,
-                    HomeScreenActivity::class.java
-                )
-            )
-        }
-    }
-
-    override fun onStart() {
-        super.onStart()
-        checkIfUserLogged()
-    }
-
-/*    private fun updateUI(currentUser: FirebaseUser?) {
+    private fun updateUI(currentUser: FirebaseUser?) {
         if (currentUser != null) {
             startActivity(Intent(this@RegisterActivity, HomeScreenActivity::class.java))
             finish()
@@ -105,5 +89,5 @@ class RegisterActivity : AppCompatActivity() {
         super.onStart()
         val currentUser = auth.currentUser
         updateUI(currentUser)
-    }*/
+    }
 }

@@ -15,7 +15,6 @@ import com.example.kostify.ui.profil.ProfileActivity
 import com.example.kostify.viewmodel.FavoriteViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 class FavoriteActivity : AppCompatActivity() {
@@ -24,7 +23,6 @@ class FavoriteActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private val viewModel by viewModels<FavoriteViewModel>()
     private lateinit var bookmarkAdapter: BookmarkAdapter
-    private val db = Firebase.firestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,10 +41,15 @@ class FavoriteActivity : AppCompatActivity() {
         binding.rvFavkos.adapter = bookmarkAdapter
         binding.rvFavkos.layoutManager = LinearLayoutManager(this)
 
-        // Amati perubahan pada LiveData bookmarks di ViewModel
-        viewModel.bookmarks.observe(this) { bookmarks ->
-            bookmarkAdapter.submitList(bookmarks) // Gunakan submitList untuk memperbarui Adapter
-        }
+        //  menggunakan listadapter    Amati perubahan pada LiveData bookmarks di ViewModel
+           viewModel.bookmarks.observe(this) { bookmarks ->
+               bookmarkAdapter.submitList(bookmarks) // Gunakan submitList untuk memperbarui Adapter
+           }
+
+//        menggunakan recycle view adapter
+       /* viewModel.bookmarks.observe(this) { bookmarks ->
+            bookmarkAdapter.setData(bookmarks) // Gunakan setData() untuk memperbarui adapter
+        }*/
 
         viewModel.isLoading.observe(this) { isLoading ->
             showLoading(isLoading) // Fungsi untuk menampilkan/menyembunyikan ProgressBar
@@ -58,7 +61,6 @@ class FavoriteActivity : AppCompatActivity() {
             }
         }
 
-
         binding.bottomNavigationView.selectedItemId = R.id.nav_favorite
         binding.bottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {
@@ -66,17 +68,21 @@ class FavoriteActivity : AppCompatActivity() {
                     startActivity(Intent(this, HomeScreenActivity::class.java))
                     true
                 }
+
                 R.id.nav_favorite -> {
                     true
                 }
+
                 R.id.nav_search -> {
                     startActivity(Intent(this, SearchKosActivity::class.java))
                     true
                 }
+
                 R.id.nav_profile -> {
                     startActivity(Intent(this, ProfileActivity::class.java))
                     true
                 }
+
                 else -> false
             }
         }
@@ -85,7 +91,7 @@ class FavoriteActivity : AppCompatActivity() {
 
     private fun checkIfUserLogged() {
         val firebaseUser = auth.currentUser
-        if(firebaseUser == null){
+        if (firebaseUser == null) {
             startActivity(
                 Intent(
                     this,
@@ -98,6 +104,11 @@ class FavoriteActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         checkIfUserLogged()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.refreshBookmarks() // Refresh daftar bookmark saat Activity kembali terlihat
     }
 
     private fun showLoading(isLoading: Boolean) {
