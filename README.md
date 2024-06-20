@@ -6,7 +6,7 @@ This project focuses on finding the ideal place to live, which is often challeng
 
 ## Kostify - Mobile Development
 
-As the Machine Learning Cohort, our task in this project was to creating application mockups using Figma, implementing these mockups in Android Studio, and developing authentication and user flow functionalities within the application.
+As the Mobile Development Cohort, our task in this project was to creating application mockups using Figma, implementing these mockups in Android Studio, and developing authentication and user flow functionalities within the application.
 
 
 
